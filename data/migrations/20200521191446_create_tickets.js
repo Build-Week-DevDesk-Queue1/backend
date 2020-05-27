@@ -22,7 +22,6 @@ exports.up = function(knex) {
 
         tickets.integer('helper_id')
         .unsigned()
-        .notNullable()
         .references('id')
         .inTable('users')
         .onUpdate('CASCADE')
