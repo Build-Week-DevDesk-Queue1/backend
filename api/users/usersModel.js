@@ -19,8 +19,8 @@ function find() {
   return db("users");
 }
 
-function findBy(filter) {
-  return db("users").where(filter);
+async function findBy(filter) {
+  return await db("users").where(filter).first();
 }
 
 async function insert(user) {
