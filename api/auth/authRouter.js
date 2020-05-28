@@ -19,7 +19,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
     Users.findBy({ username })
-      .then(user => {
+      .then(([user]) => {
         // check user password
         if(!user || !bcrypt.compareSync(password, user.password)){
               res.status(401).json({message: `Invalid user credentials.`});
